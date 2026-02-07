@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You My Little Gingerr ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:#f5f5f5;
+  background:
+    linear-gradient(rgba(15,15,15,0.78),rgba(15,15,15,0.78)),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+  background-size:cover;
+  background-position:center;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ❄️ Snowfall — FIXED & CONTINUOUS */
+.snow{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  will-change:transform;
+  transform:translateZ(0);
+  background-image:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+    radial-gradient(1.8px 1.8px at 80px 120px,#fff,transparent),
+    radial-gradient(1.6px 1.6px at 150px 200px,#fff,transparent),
+    radial-gradient(2px 2px at 220px 80px,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 300px 160px,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 400px 40px,#fff,transparent);
+  background-size:180px 180px;
+  animation:snow 22s linear infinite;
+  opacity:.55;
+}
+
+@keyframes snow{
+  from{background-position:0 0;}
+  to{background-position:0 1400px;}
+}
+
+/* Layout */
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:120px 20px 90px;
+  position:relative;
+  z-index:2;
+}
+
+.layout{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+}
+
+/* 🟥 Message Card */
+.card{
+  width:760px;
+  min-height:520px;
+  background:rgba(0,0,0,.62);
+  border-radius:22px;
+  padding:45px 40px 60px;
+  box-shadow:0 25px 60px rgba(0,0,0,.6);
+  flex-shrink:0;
+}
+
+/* Title + Emoji */
+.title-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:28px;
+}
+
+.title-emoji{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  color:#f3d9ff;
+  margin:0;
+}
+
+/* Message */
+.message{
+  font-size:16.5px;
+  line-height:1.95;
+  white-space:pre-line;
+}
+
+/* Cursor */
+.cursor{
+  display:inline-block;
+  width:2px;
+  height:1em;
+  background:#f2f2f2;
+  margin-left:2px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  0%,50%{opacity:1;}
+  51%,100%{opacity:0;}
+}
+
+/* ✋ Hand Image */
+.hand{
+  width:260px;
+  opacity:0;
+  filter:blur(6px);
+  transform:scale(.96);
+  transition:
+    opacity 1.8s ease,
+    filter 1.8s ease,
+    transform 1.8s ease;
+}
+
+.hand.show{
+  opacity:1;
+  filter:blur(0);
+  transform:scale(1);
+}
+
+.hand img{
+  width:100%;
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(0,0,0,.6);
+}
+
+/* Signature */
+.signature{
+  margin-top:45px;
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  color:#eadcff;
+  text-align:right;
+  opacity:0;
+  transition:opacity 1.2s ease;
+}
+
+/* Mobile */
+@media (max-width:900px){
+  .layout{
+    flex-direction:column;
+  }
+  .card{
+    width:100%;
+    min-height:auto;
+  }
+  .hand{
+    width:220px;
+    margin-top:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="snow"></div>
+
+<div class="container">
+  <div class="layout">
+
+    <div class="card">
+
+      <div class="title-wrap">
+        <img class="title-emoji"
+             src="https://raw.githubusercontent.com/gamerzking0011-ux/Images/main/WhatsApp%20Image%202026-02-07%20at%2009.29.39.jpeg"
+             alt="emoji">
+        <h1>For You My Little Gingerr ✨</h1>
+      </div>
+
+      <div class="message" id="message"></div>
+      <span class="cursor" id="cursor"></span>
+
+      <div class="signature" id="signature">
+        Always and forever your Gay 💕
+      </div>
+
+    </div>
+
+    <div class="hand" id="hand">
+      <img src="https://raw.githubusercontent.com/gamerzking0011-ux/Images/main/WhatsApp%20Image%202026-02-07%20at%2008.54.03.jpeg"
+           alt="Hand">
+    </div>
+
+  </div>
+</div>
+
+<script>
+const text = `
+Good morning, Gingerr ✨💗
+I hope you’re doing fine.
+This message is just for you, and there’s no need to reply.
+I know that right now things aren’t good. More importantly, I know you haven’t been doing well lately. There’s a lot of stress you’re dealing with, and I want you to know that you’re not alone. I’m here with you.
+I know you’re strong enough to handle this on your own. I know you don’t want to share anything and don’t want anyone’s help, and after what you’ve been through in the past, that makes sense.
+
+But I’m here.
+
+There’s no need to deal with everything alone.
+You have your people, and I’m your people.
+Yes, I know you can get through this on your own, but still.… I’m here. Aur esa kaun apna hota h jo apno ko akela chhod de. This time everything will be fine, Garima. Please don't worry.
+I love you, Garima, and I'm always here with you. We'll both handle this together. Please just trust this hand one last time, please just hold it one last time. (I'm not asking for a relationship), just for a friendship that'll live forever ♾️, that won't end no matter what happens.
+You matter, Garima, in the ways that are simple and in ways that are deep. I deeply care about you. I want to be with you. I want to protect you, not because you're weak, but because you're my friend, my best and my only friend, the one who matters to me more than anyone else, the one who makes me realise that I too can love. You're my everything, Garima, and I'm here with you always and forever, no matter the situations, the difficulties, or the problems we face. We'll win together.
+Will you be my friend, Garima?
+There's no need to reply
+`;
+
+const msg = document.getElementById("message");
+const cursor = document.getElementById("cursor");
+const hand = document.getElementById("hand");
+const signature = document.getElementById("signature");
+
+let i = 0;
+
+function typeText(){
+  if(i < text.length){
+    msg.textContent += text.charAt(i);
+
+    if(msg.textContent.includes("trust this hand one last time")){
+      hand.classList.add("show");
+    }
+
+    const delay = text.charAt(i) === "\n" ? 520 : 48;
+    i++;
+    setTimeout(typeText, delay);
+  } else {
+    cursor.style.display = "none";
+    signature.style.opacity = "1";
+  }
+}
+
+setTimeout(typeText, 1500);
+</script>
+
+</body>
+</html>
